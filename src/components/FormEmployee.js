@@ -9,7 +9,13 @@ const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm()
   const dispatch = useDispatch()
 
-  const saveEmployee = data => { dispatch( add(data) ) }
+  const saveEmployee = async data => { 
+    let dateOfBirthParsed, startDateParsed
+    dateOfBirthParsed = await data.dateOfBirth?.getTime()
+    startDateParsed = await data.startDate?.getTime()
+    const dataParsed = { ...data, dateOfBirth: dateOfBirthParsed , startDate: startDateParsed }
+    dispatch( add( dataParsed ) ) 
+  }
 
   const dateOfBirth = useRef(null),
         startDate = useRef(null)
@@ -59,16 +65,16 @@ const FormEmployee = () => {
             <legend>Address</legend>
 
             <label htmlFor="street">Street</label>
-            <input id="street" type="text" {...register("address.street")} />
+            <input id="street" type="text" {...register("street")} />
 
             <label htmlFor="city">City</label>
-            <input id="city" type="text" {...register("address.city")} />
+            <input id="city" type="text" {...register("city")} />
 
             <label htmlFor="state">State</label>
             <ControllerSelect name="state" control={control} options={optionsStates} inputId="state" />
 
             <label htmlFor="zip-code">Zip Code</label>
-            <input id="zip-code" type="number" {...register("address.zipCode")} />
+            <input id="zip-code" type="number" {...register("zipCode")} />
         </fieldset>
 
         <label htmlFor="department">Department</label>
