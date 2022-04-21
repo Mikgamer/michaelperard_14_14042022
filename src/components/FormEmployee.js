@@ -2,10 +2,14 @@ import { useForm } from "react-hook-form"
 import { useRef } from "react"
 import ControllerDatePicker from "./ControllerDatePicker"
 import ControllerSelect from "./ControllerSelect"
+import { useDispatch } from 'react-redux'
+import { add } from "../store"
 
 const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm()
-  const saveEmployee = data => {console.log(data)}
+  const dispatch = useDispatch()
+
+  const saveEmployee = data => { dispatch( add(data) ) }
 
   const dateOfBirth = useRef(null),
         startDate = useRef(null)
