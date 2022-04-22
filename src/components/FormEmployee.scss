@@ -1,0 +1,17 @@
+form{
+  width: 80%;
+
+  @media (min-width: 600px) {
+    width: 500px;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .address {
+    margin-top: 10px;
+  }
+}

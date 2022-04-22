@@ -1,9 +1,12 @@
+import "./FormEmployee.scss"
+
 import { useForm } from "react-hook-form"
 import { useRef } from "react"
 import ControllerDatePicker from "./ControllerDatePicker"
 import ControllerSelect from "./ControllerSelect"
 import { useDispatch } from 'react-redux'
 import { add } from "../store"
+import { v4 as uuidv4 } from 'uuid'
 
 const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm()
@@ -13,7 +16,7 @@ const FormEmployee = () => {
     let dateOfBirthParsed, startDateParsed
     dateOfBirthParsed = await data.dateOfBirth?.getTime()
     startDateParsed = await data.startDate?.getTime()
-    const dataParsed = { ...data, dateOfBirth: dateOfBirthParsed , startDate: startDateParsed }
+    const dataParsed = { ...data, dateOfBirth: dateOfBirthParsed , startDate: startDateParsed, id: uuidv4() }
     dispatch( add( dataParsed ) ) 
   }
 

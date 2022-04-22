@@ -1,8 +1,9 @@
-table{
-  border-spacing: 0px;
-}
-
-.rc-table-cell {
-  padding: 10px;
-  border: 1px solid grey;
+#employeeDiv {
+  .dataStyle {
+    width: 100%;
+    
+    @media (min-width: 1280px) {
+      width: 1200px;
+    }
+  }
 }

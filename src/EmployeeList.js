@@ -2,54 +2,44 @@ import React from "react"
 import "./EmployeeList.scss"
 
 import { Link } from "react-router-dom"
-import Table from 'rc-table'
+import { DataGrid } from '@mui/x-data-grid'
 import { useSelector } from "react-redux"
-
-
-// const Table = (props) => {
-
-//   return (
-//     <table>
-//       <thead>
-//         <tr>
-//           { props.columns.map(columnItem => <th>{columnItem.Header}</th>) }
-//         </tr>
-//       </thead>
-//       <tbody>
-//         { props.data.map( dataItem => 
-//           <tr>
-//             { props.columns.map(columnItem => <td>{dataItem[columnItem.accessor]}</td>) }
-//           </tr>
-//         ) }
-//       </tbody>
-//     </table>
-//   )
-// }
 
 const EmployeeList = () => {
   const employees = useSelector(state => state.employees)
 
   const columns = [
-    { title: "First Name",    dataIndex: "firstName",   key: "firstName" },
-    { title: "Last Name",     dataIndex: "lastName",    key: "lastName" },
-    { title: "Start Date",    dataIndex: "startDate",   key: "startDate" },
-    { title: "Department",    dataIndex: "department",  key: "department" },
-    { title: "Date of Birth", dataIndex: "dateOfBirth", key: "dateOfBirth" },
-    { title: "street",        dataIndex: "street",      key: "street" },
-    { title: "City",          dataIndex: "city",        key: "city" },
-    { title: "State",         dataIndex: "state",       key: "state" },
-    { title: "Zip Code",      dataIndex: "zipCode",     key: "zipCode" }
+    { headerName: "First Name",    field: "firstName",   minWidth: 50  },
+    { headerName: "Last Name",     field: "lastName",    minWidth: 50  },
+    { headerName: "Start Date",    field: "startDate",   minWidth: 150 },
+    { headerName: "Department",    field: "department",  minWidth: 50  },
+    { headerName: "Street",        field: "street",      minWidth: 200 },
+    { headerName: "City",          field: "city",        minWidth: 50  },
+    { headerName: "State",         field: "state",       minWidth: 50  },
+    { headerName: "Zip Code",      field: "zipCode",     minWidth: 50  },
+    { headerName: "Date of Birth", field: "dateOfBirth", minWidth: 150, flex: 1 }
   ]
 
-  const data = employees
-  console.log(data)
+  let data = employees
+
+  const [pageSize, setPageSize] = React.useState(5);
 
   return (
-    <div id="employee-div" className="container">
+    <div id="employeeDiv" className="container">
         <h1>Current Employees</h1>
-        <table id="employee-table" className="display"></table>
         <Link to="/">Home</Link>
-        <Table columns={columns} data={data} emptyText="No data" />
+        <div className="dataStyle">
+          <DataGrid
+            autoHeight
+            rows={data}
+            columns={columns}
+            pageSize={pageSize}
+            onPageSizeChange={(newPage) => setPageSize(newPage)}
+            pagination
+            rowsPerPageOptions={[5, 10, 25, 50]}
+            disableSelectionOnClick
+          />
+        </div>
     </div>
   )
 }
