@@ -25,9 +25,9 @@ const EmployeeList = () => {
   const [pageSize, setPageSize] = React.useState(5);
 
   return (
-    <div id="employeeDiv" className="container">
+    <main className="container">
         <h1>Current Employees</h1>
-        <Link to="/">Home</Link>
+        <Link to="/" className="link">Home</Link>
         <div className="dataStyle">
           <DataGrid
             autoHeight
@@ -40,7 +40,7 @@ const EmployeeList = () => {
             disableSelectionOnClick
           />
         </div>
-    </div>
+    </main>
   )
 }
 

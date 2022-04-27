@@ -1,17 +1,195 @@
 form{
-  width: 80%;
+  padding: 50px;
+  background: #ffffff;
+  box-shadow: 3px 3px 10px #00000020;
+  width: 100%;
+  box-sizing: border-box;
 
   @media (min-width: 600px) {
-    width: 500px;
+    width: 600px;
+    border-radius: 10px;
   }
 
-  label {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 10px;
+  h2 {
+    margin: 0 0 30px;
   }
+
+  .address, .inputGroup {
+    margin: 0 0 15px;
+    border-radius: 12px;
+
+    @media (min-width: 600px) {
+    border-radius: 5px;
+    }
+  }
+
+  .inputRow {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: 600px) {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  button[type="submit"]{
+    font-family: inherit;
+    display: block;
+    margin: 30px auto 0;
+    min-height: 48px;
+    border-radius: 12px;
+    border: 1px solid;
+    padding: 2px 5px;
+    font-size: 1.1rem;
+    width: 50%;
+    background: #f3f3f3;
+
+    @media (min-width: 600px) {
+      border-radius: 5px;
+      min-height: 36px;
+      font-size: 1.05rem;
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: #3581E5 auto 1px;
+      border-color: transparent;
+    }
+
+    &:active {
+      box-shadow: inset 0 0 10px rgb(0 0 0/0.2);
+    }
+  }
+
+  .inputGroup{
+    flex: 1;
+
+    &>label{
+      display: block;
+      padding: 0 0 4px;
+    }
+
+    &>input{
+      min-height: 48px;
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 2px 5px;
+      font-size: 1.1rem;
+      box-sizing: border-box;
+      width: 100%;
+
+      @media (min-width: 600px) {
+        border-radius: 5px;
+        min-height: 36px;
+        font-size: 1.05rem;
+      }
+
+      &:focus {
+        outline: #3581E5 auto 1px;
+        border-color: transparent;
+      }
+    }
+  }
+
+  .select__control {
+    border: 1px solid;
+    box-shadow: unset;
+    cursor: pointer;
+    border-radius: 12px;
+    min-height: 48px;
+    font-size: 1.1rem;
+
+    @media (min-width: 600px) {
+      border-radius: 5px;
+      min-height: 36px;
+      font-size: 1.05rem;
+    }
+
+    &--is-focused{
+      outline: #3581E5 auto 1px !important;
+      border-color: transparent;
+    }
+
+    &:hover {
+      border: 1px solid;
+    }
+  }
+
+  .select__option:hover {
+    cursor: pointer;
+  }
+
+  .react-date-picker {
+    min-height: 36px;
+    width: 100%;
+
+    &__wrapper {
+      border: 1px solid;
+      border-radius: 12px;
+    }
+
+    &__button{
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+    
+    @media (min-width: 600px) {
+      &__wrapper {
+        border-radius: 5px;
+      }
+
+      &__button{
+        width: 36px;
+        height: 36px;
   
-  .address {
-    margin-top: 10px;
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+
+    &__inputGroup {
+      padding: 2px 5px;
+      box-sizing: border-box;
+      font-size: 1.1rem;
+      letter-spacing: 2px;
+      text-align: center;
+
+      @media (min-width: 600px) {
+        font-size: 1.05rem;
+      }
+
+      input{
+        letter-spacing: inherit;
+        text-align: center;
+        
+        &:focus {
+          outline: #3581E5 auto 1px;
+          border-color: transparent;
+        }
+      }
+
+      &__day, &__month {
+        width: 28px !important;
+      }
+
+      &__year {
+        width: 50px !important;
+      }
+    }
+
   }
 }

@@ -12,6 +12,8 @@ const ControllerDatePicker = (props) => {
           onChange={(date) => field.onChange(date)} 
           value={field.value}
           ref={props.labelRef}
+          calendarAriaLabel="Toggle calendar"
+          clearAriaLabel="Clear value"
         />
       )}
     />

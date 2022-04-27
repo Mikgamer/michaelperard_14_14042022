@@ -52,38 +52,65 @@ const FormEmployee = () => {
 
   return (
     <form onSubmit={handleSubmit(saveEmployee)}>
-        <label htmlFor="first-name">First Name</label>
-        <input type="text" id="first-name" {...register("firstName")} />
+      <h2>Create Employee</h2>
+      <div className="inputRow">
+        <div className="inputGroup">
+          <label htmlFor="first-name">First Name</label>
+          <input type="text" id="first-name" {...register("firstName")} />
+        </div>
 
-        <label htmlFor="last-name">Last Name</label>
-        <input type="text" id="last-name" {...register("lastName")} />
+        <div className="inputGroup">
+          <label htmlFor="last-name">Last Name</label>
+          <input type="text" id="last-name" {...register("lastName")} />
+        </div>
+      </div>
 
-        <label onClick={()=>DatePickerFocusByRef(dateOfBirth)}>Date of Birth</label>
-        <ControllerDatePicker name="dateOfBirth" control={control} labelRef={dateOfBirth} />
+      <div className="inputRow">
+        <div className="inputGroup">
+          <label onClick={()=>DatePickerFocusByRef(dateOfBirth)}>Date of Birth</label>
+          <ControllerDatePicker name="dateOfBirth" control={control} labelRef={dateOfBirth} />
+        </div>
 
-        <label onClick={()=>DatePickerFocusByRef(startDate)}>Start Date</label>
-        <ControllerDatePicker name="startDate" control={control} labelRef={startDate} />
+        <div className="inputGroup">
+          <label onClick={()=>DatePickerFocusByRef(startDate)}>Start Date</label>
+          <ControllerDatePicker name="startDate" control={control} labelRef={startDate} />
+        </div>
+      </div>
 
-        <fieldset className="address">
-            <legend>Address</legend>
+      <fieldset className="address">
+          <legend>Address</legend>
 
-            <label htmlFor="street">Street</label>
-            <input id="street" type="text" {...register("street")} />
+          <div className="inputRow">
+            <div className="inputGroup">
+              <label htmlFor="street">Street</label>
+              <input id="street" type="text" {...register("street")} />
+            </div>
 
-            <label htmlFor="city">City</label>
-            <input id="city" type="text" {...register("city")} />
+            <div className="inputGroup">
+              <label htmlFor="city">City</label>
+              <input id="city" type="text" {...register("city")} />
+            </div>
+          </div>
 
-            <label htmlFor="state">State</label>
-            <ControllerSelect name="state" control={control} options={optionsStates} inputId="state" />
+          <div className="inputRow">
+            <div className="inputGroup">
+              <label htmlFor="state">State</label>
+              <ControllerSelect name="state" control={control} options={optionsStates} inputId="state" />
+            </div>
 
-            <label htmlFor="zip-code">Zip Code</label>
-            <input id="zip-code" type="number" {...register("zipCode")} />
-        </fieldset>
+            <div className="inputGroup">
+              <label htmlFor="zip-code">Zip Code</label>
+              <input id="zip-code" type="number" {...register("zipCode")} />
+            </div>
+          </div>
+      </fieldset>
 
+      <div className="inputGroup">
         <label htmlFor="department">Department</label>
         <ControllerSelect name="department" control={control} options={optionsDepartment} inputId="department" />
-        
-        <button type="submit" >Save</button>
+      </div>
+      
+      <button type="submit" >Save</button>
     </form>
   )
 }

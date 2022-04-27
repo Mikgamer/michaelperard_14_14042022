@@ -11,7 +11,7 @@ const ControllerSelect = (props) => {
         <Select 
           options={props.options} onChange={(data) => {field.onChange(data.value)} }
           value={props.options.find(option => option.value === field.value)}
-          inputId={props.inputId}
+          inputId={props.inputId} classNamePrefix="select"
         />
       )}
     />
