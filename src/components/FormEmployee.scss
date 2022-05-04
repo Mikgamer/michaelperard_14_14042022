@@ -4,6 +4,7 @@ form{
   box-shadow: 3px 3px 10px #00000020;
   width: 100%;
   box-sizing: border-box;
+  margin: 0 0 40px;
 
   @media (min-width: 600px) {
     width: 600px;
@@ -191,5 +192,19 @@ form{
       }
     }
 
+  }
+}
+
+#successModal {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 3px 3px 10px #00000020;
+
+  .link {
+    display: block;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    margin: 10px 0 0;
   }
 }

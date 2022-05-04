@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import "./EmployeeList.scss"
 
 import { Link } from "react-router-dom"
@@ -22,7 +22,7 @@ const EmployeeList = () => {
 
   let data = employees
 
-  const [pageSize, setPageSize] = React.useState(5);
+  const [pageSize, setPageSize] = useState(5)
 
   return (
     <main className="container">
