@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import { add } from "../store"
 import { v4 as uuidv4 } from 'uuid'
 import { Link } from "react-router-dom"
-import Modal, { openModal } from "@mikgamer/yet-another-react-modal-component"
+import Modal, { openModal } from "yet-another-react-modal-component"
 
 const FormEmployee = () => {
   const { register, handleSubmit, control } = useForm()
