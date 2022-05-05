@@ -2581,6 +2581,11 @@
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
 
+"app-root-path@^3.0.0":
+  "integrity" "sha512-qMcx+Gy2UZynHjOHOIXPNvpf+9cjvk3cWrBBK7zg4gH9+clobJRb9NGzcT7mQTcV/6Gm/1WelUtqxVXnNlrwcw=="
+  "resolved" "https://registry.npmjs.org/app-root-path/-/app-root-path-3.0.0.tgz"
+  "version" "3.0.0"
+
 "arg@^5.0.1":
   "integrity" "sha512-e0hDa9H2Z9AwFkk2qDlwhoMYE4eToKarchkQHovNdLTCYMHZHeRjI71crOh+dio4K6u1IcwubQqo79Ga4CyAQA=="
   "resolved" "https://registry.npmjs.org/arg/-/arg-5.0.1.tgz"
@@ -3262,6 +3267,14 @@
   "integrity" "sha1-3dgA2gxmEnOTzKWVDqloo6rxJTs="
   "resolved" "https://registry.npmjs.org/commondir/-/commondir-1.0.1.tgz"
   "version" "1.0.1"
+
+"compress-create-react-app@^1.2.1":
+  "integrity" "sha512-I1t6pfccPODYOzq17DKSN6xglO79DztCBXPOFS6rTCLke2sXn8Ot3Pe+yXIKSLfUTUU9+QNDf9MGsSGv7xCNXw=="
+  "resolved" "https://registry.npmjs.org/compress-create-react-app/-/compress-create-react-app-1.2.1.tgz"
+  "version" "1.2.1"
+  dependencies:
+    "app-root-path" "^3.0.0"
+    "yargs" "^17.2.1"
 
 "compressible@~2.0.16":
   "integrity" "sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg=="
@@ -8250,7 +8263,7 @@
   "resolved" "https://registry.npmjs.org/string-natural-compare/-/string-natural-compare-3.0.1.tgz"
   "version" "3.0.1"
 
-"string-width@^4.1.0", "string-width@^4.2.0":
+"string-width@^4.1.0", "string-width@^4.2.0", "string-width@^4.2.3":
   "integrity" "sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g=="
   "resolved" "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz"
   "version" "4.2.3"
@@ -9295,6 +9308,11 @@
   "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
   "version" "20.2.9"
 
+"yargs-parser@^21.0.0":
+  "integrity" "sha512-9BK1jFpLzJROCI5TzwZL/TU4gqjK5xiHV/RfWLOahrjAko/e4DJkRDZQXfvqAsiZzzYhgAzbgz6lg48jcm4GLg=="
+  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.0.1.tgz"
+  "version" "21.0.1"
+
 "yargs@^16.2.0":
   "integrity" "sha512-D1mvvtDG0L5ft/jGWkLpG1+m0eQxOfaBvTNELraWj22wSVUMWxZUvYgJYcKh6jGGIkJFhH4IZPQhR4TKpc8mBw=="
   "resolved" "https://registry.npmjs.org/yargs/-/yargs-16.2.0.tgz"
@@ -9307,6 +9325,19 @@
     "string-width" "^4.2.0"
     "y18n" "^5.0.5"
     "yargs-parser" "^20.2.2"
+
+"yargs@^17.2.1":
+  "integrity" "sha512-WSZD9jgobAg3ZKuCQZSa3g9QOJeCCqLoLAykiWgmXnDo9EPnn4RPf5qVTtzgOx66o6/oqhcA5tHtJXpG8pMt3g=="
+  "resolved" "https://registry.npmjs.org/yargs/-/yargs-17.4.1.tgz"
+  "version" "17.4.1"
+  dependencies:
+    "cliui" "^7.0.2"
+    "escalade" "^3.1.1"
+    "get-caller-file" "^2.0.5"
+    "require-directory" "^2.1.1"
+    "string-width" "^4.2.3"
+    "y18n" "^5.0.5"
+    "yargs-parser" "^21.0.0"
 
 "yet-another-react-modal-component@^1.0.2":
   "integrity" "sha512-2rcRALrMwUyTG9j12omcPARuGbx0nCTBHAiDUu3c/30m+oKqy5RtRmTy2a3fGZtv0YZQPz/vHFHCwiy9gAVZBg=="

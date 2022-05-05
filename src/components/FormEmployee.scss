@@ -118,6 +118,10 @@ form{
     &:hover {
       border: 1px solid;
     }
+
+    .select__placeholder {
+      color: #575757;
+    }
   }
 
   .select__option:hover {
