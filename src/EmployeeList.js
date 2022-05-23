@@ -1,13 +1,12 @@
-import React, { useState } from "react"
-import "./EmployeeList.scss"
-
+import { useState } from "react"
 import { Link } from "react-router-dom"
 import { DataGrid } from '@mui/x-data-grid'
 import { useSelector } from "react-redux"
+import "./EmployeeList.scss"
 
 const EmployeeList = () => {
+  const [pageSize, setPageSize] = useState(5)
   const employees = useSelector(state => state.employees)
-
   const columns = [
     { headerName: "First Name",    field: "firstName",   minWidth: 50  },
     { headerName: "Last Name",     field: "lastName",    minWidth: 50  },
@@ -20,10 +19,6 @@ const EmployeeList = () => {
     { headerName: "Date of Birth", field: "dateOfBirth", minWidth: 150, flex: 1 }
   ]
 
-  let data = employees
-
-  const [pageSize, setPageSize] = useState(5)
-
   return (
     <main className="container">
         <h1>Current Employees</h1>
@@ -31,7 +26,7 @@ const EmployeeList = () => {
         <div className="dataStyle">
           <DataGrid
             autoHeight
-            rows={data}
+            rows={employees}
             columns={columns}
             pageSize={pageSize}
             onPageSizeChange={(newPage) => setPageSize(newPage)}

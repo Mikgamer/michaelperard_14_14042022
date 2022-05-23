@@ -1,8 +1,6 @@
-import React, { Suspense } from 'react'
-
+import { Suspense, lazy } from 'react'
 import { Link } from "react-router-dom"
-const FormEmployee = React.lazy(() => import("./components/FormEmployee"))
-// import FormEmployee from "./components/FormEmployee"
+const FormEmployee = lazy(() => import("./components/FormEmployee"))
 
 const App = () => {
   return (
